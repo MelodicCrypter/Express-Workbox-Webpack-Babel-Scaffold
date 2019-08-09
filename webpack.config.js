@@ -4,7 +4,8 @@ const nodeExternals = require('webpack-node-externals');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const AutoCleanBuildPlugin = require('webpack-auto-clean-build-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 
@@ -18,7 +19,7 @@ const frontConfig = {
     },
     output: {
         path: path.resolve(__dirname, './public/build/'),
-        filename: '[name].[contenthash].main.bundle.js',
+        filename: '[name].[contenthash].js',
         publicPath: '/build/',
     },
     watchOptions: {
@@ -85,12 +86,10 @@ const frontConfig = {
     plugins: [
         new webpack.HashedModuleIdsPlugin(),
         new CleanWebpackPlugin(),
-        new WorkboxWebpackPlugin.InjectManifest({
-            swSrc: path.resolve(__dirname, './src-sw.js'),
-            swDest: path.resolve(__dirname, './sw.js'),
-            globDirectory: 'public/',
-            globPatterns: ['views/**/*.html', 'server-bundle.js'],
-            importsDirectory: 'wbassets',
+        new HtmlWebpackPlugin({
+            title: 'Custom template',
+            filename: 'footer.html',
+            template: path.resolve(__dirname, './public/views/partials/footer.html'),
         }),
         new MiniCssExtractPlugin({
             filename: '[name].css',
@@ -104,6 +103,14 @@ const frontConfig = {
         new webpack.DefinePlugin({
             'process.env.AUTHOR': JSON.stringify('hughcaluscusin'),
         }),
+        new InjectManifest({
+            swSrc: path.resolve(__dirname, './src-sw.js'),
+            swDest: path.resolve(__dirname, './sw.js'),
+            globDirectory: 'public/',
+            globPatterns: ['views/**/*.html', 'server-bundled.js', 'manifest.json', '/'],
+            importsDirectory: 'wbassets',
+            // dontCacheBustURLsMatching: /\.\w{6}\./,
+        }),
     ],
 };
 
@@ -115,7 +122,7 @@ const backConfig = {
     },
     output: {
         path: path.resolve(__dirname, './public/'),
-        filename: 'server-bundle.js',
+        filename: 'server-bundled.js',
     },
     node: {
         __dirname: true,

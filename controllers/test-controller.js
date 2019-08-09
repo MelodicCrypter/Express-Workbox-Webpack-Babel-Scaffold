@@ -1,12 +1,12 @@
 const path = require('path');
 
 // 1. Controller for your homepage or index
-function renderHome(req, res) {
-    res.render('index', {
+function renderTest(req, res) {
+    res.render('test', {
         // for es6Renderer
         locals: {
-            pageTitle: 'Express Workbox Webpack Babel Scaffold',
-            title: 'Simple',
+            pageTitle: 'Sample Page for Testing Route',
+            title: 'Test Page',
         },
         partials: {
             header: path.resolve('public/views/partials/header.html'),
@@ -18,4 +18,4 @@ function renderHome(req, res) {
     });
 }
 
-export default renderHome;
+export default renderTest;
