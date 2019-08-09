@@ -11,7 +11,7 @@
     "dev-start-br": "browser-refresh ./public/server-bundled.js",
     "dev-start-ar": "yarn clean-dir && concurrently 'yarn wp-build-dev-watch' 'yarn dev-start-br'",
     "dev-start": "yarn clean-dir && yarn wp-build-dev && yarn start",
-    "wp-build-prod": "webpack --config ./webpack.config.js --mode production",
+    "wp-build-prod": "yarn clean-dir && webpack --config ./webpack.config.js --mode production",
     "start": "node ./public/server-bundled.js"
   },
   "engines": {

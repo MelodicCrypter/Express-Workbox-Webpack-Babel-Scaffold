@@ -1,6 +1,7 @@
 // 0. Local App Modules
 import homeRoute from '../routes/home-route';
 import testRoute from '../routes/test-route';
+import fallbackRoute from '../routes/fallback-route';
 
 // 1. Library Modules
 const express = require('express');
@@ -28,6 +29,7 @@ app.get('/sw.js', (req, res) => {
 // 5.2 Routes
 app.use('/', homeRoute);
 app.use('/test', testRoute);
+app.use('/fallback', fallbackRoute);
 
 // 6. Listen
 app.listen(port, () => {
