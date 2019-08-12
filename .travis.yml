@@ -3,7 +3,7 @@ sudo: required
 language: node_js
 
 node_js:
-  - node
+  - "10.15.1"
 
 before_install: # if "install" is overridden
   # Repo for Yarn
