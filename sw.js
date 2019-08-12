@@ -1,5 +1,5 @@
 importScripts(
-    '/build/wbassets/precache-manifest.3ad12a76d62052cd65a7b107677cbc63.js',
+    '/build/wbassets/precache-manifest.9198d8b4e83f2371895a6c3bb62bb944.js',
     'https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js',
 );
 
@@ -22,7 +22,7 @@ const urlsWithHash = [...self.__precacheManifest]
         return { url: u.url };
     });
 const urlsWithNoHash = [...self.__precacheManifest].filter(c => !c.url.includes('/build/'));
-const customURLs = [{ url: '/' }, { url: '/fallback' }];
+const customURLs = [{ url: '/' }, { url: '/test' }, { url: '/fallback' }];
 const finalPrecachedManifest = [...urlsWithHash, ...urlsWithNoHash, ...customURLs];
 
 // 4. Warming-up the runtime cache

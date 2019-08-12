@@ -1,0 +1,21 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - node
+
+cache:
+  directories:
+    - "node_modules"
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id:
+    secure: EB_ACCESS_KEY_ID
+  secret_access_key:
+    secure: EB_SECRET_KEY
+  region: "us-east-1"
+  app: "ewwb"
+  env: "production"
+  bucket_name: "ewwb-production"

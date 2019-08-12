@@ -17,7 +17,7 @@ const urlsWithHash = [...self.__precacheManifest]
         return { url: u.url };
     });
 const urlsWithNoHash = [...self.__precacheManifest].filter(c => !c.url.includes('/build/'));
-const customURLs = [{ url: '/' }, { url: '/fallback' }];
+const customURLs = [{ url: '/' }, { url: '/test' }, { url: '/fallback' }];
 const finalPrecachedManifest = [...urlsWithHash, ...urlsWithNoHash, ...customURLs];
 
 // 4. Warming-up the runtime cache

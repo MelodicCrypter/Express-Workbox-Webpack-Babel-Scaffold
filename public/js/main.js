@@ -51,4 +51,4 @@ if ('serviceWorker' in navigator) {
 // Your own stuff here =============================================================
 console.log('ישוע המושיע שלי');
 
-console.log('yay, Jesus!!!!!!!!!');
+console.log('yay, Jesus!');
