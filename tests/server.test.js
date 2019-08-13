@@ -1,5 +1,6 @@
+import app from '../public/app';
+
 const request = require('supertest');
-const app = require('../public/app');
 
 describe('GET /', () => {
     test('It should response with a homepage', () => {
