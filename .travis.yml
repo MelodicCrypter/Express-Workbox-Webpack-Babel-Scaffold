@@ -14,7 +14,7 @@ before_install: # if "install" is overridden
   - npm install -g yarn@1.17.3
 
 install:
-  - yarn
+  - yarn install
 
 cache:
   yarn: true
