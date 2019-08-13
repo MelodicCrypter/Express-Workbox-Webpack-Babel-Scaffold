@@ -21,6 +21,9 @@ cache:
   directories:
     - "node_modules"
 
+script:
+  - yarn build:production
+  - yarn test
 
 deploy:
   provider: elasticbeanstalk
