@@ -12,7 +12,7 @@
     "dev-start-ar": "yarn clean-dir && concurrently 'yarn wp-build-dev-watch' 'yarn dev-start-br'",
     "dev-start": "yarn clean-dir && yarn wp-build-dev && yarn start",
     "test": "jest",
-    "build:production": "yarn clean-dir && webpack --config ./webpack.config.js --mode production",
+    "build:production": "webpack --config ./webpack.config.js --mode production",
     "start": "node ./public/server-bundled.js"
   },
   "engines": {
