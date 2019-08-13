@@ -12,9 +12,9 @@ before_install: # if "install" is overridden
   #- sudo apt-get update -qq
   #- sudo apt-get install -y -qq yarn=1.17.3-1
   - npm install -g yarn@1.17.3
-
-install:
   - yarn install
+
+install: skip
 
 cache:
   yarn: true
