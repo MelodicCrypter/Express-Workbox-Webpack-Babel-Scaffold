@@ -50,13 +50,38 @@
             return Object.prototype.hasOwnProperty.call(e, t);
         }),
         (r.p = ''),
-        r((r.s = 5));
+        r((r.s = 6));
 })([
     function(e, t) {
         e.exports = require('path');
     },
     function(e, t) {
         e.exports = require('express');
+    },
+    function(e, t, r) {
+        'use strict';
+        (function(e) {
+            var n = r(3),
+                o = r(4),
+                i = r(5),
+                l = r(1),
+                s = r(0),
+                a = r(8),
+                u = l(),
+                c = s.join(e, './'),
+                f = s.join(e, './views/');
+            u.engine('html', a),
+                u.set('views', f),
+                u.set('view engine', 'html'),
+                u.use(l.static(c)),
+                u.get('/sw.js', function(t, r) {
+                    r.sendFile(s.resolve(e, '../sw.js'));
+                }),
+                u.use('/', n.a),
+                u.use('/test', o.a),
+                u.use('/fallback', i.a),
+                (t.a = u);
+        }.call(this, 'public'));
     },
     function(e, t, r) {
         'use strict';
@@ -110,37 +135,17 @@
         t.a = i;
     },
     function(e, t, r) {
-        e.exports = r(6);
+        e.exports = r(7);
     },
     function(e, t, r) {
         'use strict';
-        r.r(t),
-            function(e) {
-                var t = r(2),
-                    n = r(3),
-                    o = r(4),
-                    i = r(1),
-                    l = r(0),
-                    s = r(7),
-                    a = i(),
-                    u = process.env.PORT || 3007,
-                    c = l.join(e, './'),
-                    f = l.join(e, './views/');
-                a.engine('html', s),
-                    a.set('views', f),
-                    a.set('view engine', 'html'),
-                    a.use(i.static(c)),
-                    a.get('/sw.js', function(t, r) {
-                        r.sendFile(l.resolve(e, '../sw.js'));
-                    }),
-                    a.use('/', t.a),
-                    a.use('/test', n.a),
-                    a.use('/fallback', o.a),
-                    a.listen(u, function() {
-                        console.log('App is listening on port '.concat(u)),
-                            process.send && process.send('online');
-                    });
-            }.call(this, 'public');
+        r.r(t);
+        var n = r(2),
+            o = process.env.PORT || 3e3;
+        n.a.listen(o, function() {
+            console.log('App is listening on port '.concat(o)),
+                process.send && process.send('online');
+        });
     },
     function(e, t) {
         e.exports = require('express-es6-template-engine');

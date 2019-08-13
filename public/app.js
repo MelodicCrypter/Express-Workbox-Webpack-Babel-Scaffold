@@ -10,7 +10,6 @@ const es6Renderer = require('express-es6-template-engine');
 
 // 2. Initializations
 const app = express();
-const port = process.env.PORT || 3000;
 const publicAssetsPath = path.join(__dirname, './');
 const viewsPath = path.join(__dirname, './views/');
 
@@ -31,4 +30,4 @@ app.use('/', homeRoute);
 app.use('/test', testRoute);
 app.use('/fallback', fallbackRoute);
 
-module.exports = app;
+export default app;

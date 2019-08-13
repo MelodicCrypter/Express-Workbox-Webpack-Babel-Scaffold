@@ -1,6 +1,8 @@
 // The app.js,
 // The app was intentionally separated for testing purposes
-const app = require('./app');
+import app from './app';
+
+const port = process.env.PORT || 3000;
 
 // 6. Listen
 app.listen(port, () => {
