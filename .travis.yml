@@ -31,6 +31,6 @@ deploy:
   access_key_id: $EB_ACCESS_KEY_ID
   secret_access_key: $EB_SECRET_KEY
   region: "us-east-1"
-  app: "ewwb"
+  app: "ewwb-new"
   env: "production"
-  bucket_name: "elasticbeanstalk-us-east-1-837534802860"
+  bucket_name: "ewwb-production"
