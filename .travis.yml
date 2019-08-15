@@ -12,7 +12,6 @@ before_install: # if "install" is overridden
   #- sudo apt-get update -qq
   #- sudo apt-get install -y -qq yarn=1.17.3-1
   - npm install -g yarn@1.17.3
-  - yarn -v
 
 install:
   - yarn install
@@ -26,6 +25,9 @@ script:
   - yarn build:production
   - yarn test
 
+before_deploy:
+  - ls
+
 deploy:
   provider: elasticbeanstalk
   access_key_id: $EB_ACCESS_KEY_ID
@@ -35,3 +37,6 @@ deploy:
   env: "production"
   bucket_name: "ewwb-production"
   skip_cleanup: true
+
+after_deploy:
+  - ls
