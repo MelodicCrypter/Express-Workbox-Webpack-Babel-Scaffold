@@ -104,8 +104,8 @@ const frontConfig = {
             'process.env.AUTHOR': JSON.stringify('hughcaluscusin'),
         }),
         new InjectManifest({
-            swSrc: path.resolve(__dirname, './src-sw.js'),
-            swDest: path.resolve(__dirname, './sw.js'),
+            swSrc: path.resolve(__dirname, './public/src-sw.js'),
+            swDest: path.resolve(__dirname, './public/sw.js'),
             globDirectory: 'public/',
             globPatterns: ['views/**/*.html', 'server-bundled.js', 'manifest.json', '/'],
             importsDirectory: 'wbassets',

@@ -5,7 +5,7 @@ importScripts(
 
 // 1. Debug, only when development phase ===================================================
 // Comment out in production, or set to false
-workbox.setConfig({ debug: false });
+workbox.setConfig({ debug: true });
 
 // 2. Cache names ==========================================================================
 workbox.core.setCacheNameDetails({

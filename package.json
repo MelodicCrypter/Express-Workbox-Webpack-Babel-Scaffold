@@ -9,7 +9,7 @@
     "wp-build-dev": "webpack --config ./webpack.config.js --mode development",
     "wp-build-dev-watch": "webpack --config ./webpack.config.js --mode development --watch true",
     "dev-start-br": "browser-refresh ./public/server-bundled.js",
-    "dev-start-ar": "yarn clean-dir && concurrently 'yarn wp-build-dev-watch' 'yarn test' 'yarn dev-start-br'",
+    "dev-start-ar": "yarn clean-dir && yarn wp-build-dev && yarn test && concurrently 'yarn wp-build-dev-watch' 'yarn dev-start-br'",
     "dev-start": "yarn clean-dir && yarn wp-build-dev && yarn test && yarn start",
     "test": "jest",
     "build:production": "webpack --config ./webpack.config.js --mode production",
