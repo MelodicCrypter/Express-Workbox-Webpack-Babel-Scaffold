@@ -34,3 +34,4 @@ deploy:
   app: "ewwb-new"
   env: "production"
   bucket_name: "ewwb-production"
+  skip_cleanup: true
