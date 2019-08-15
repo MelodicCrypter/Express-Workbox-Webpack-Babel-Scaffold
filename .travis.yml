@@ -25,9 +25,6 @@ script:
   - yarn build:production
   - yarn test
 
-before_deploy:
-  - ls
-
 deploy:
   provider: elasticbeanstalk
   access_key_id: $EB_ACCESS_KEY_ID
@@ -37,6 +34,3 @@ deploy:
   env: "production"
   bucket_name: "ewwb-production"
   skip_cleanup: true
-
-after_deploy:
-  - ls
