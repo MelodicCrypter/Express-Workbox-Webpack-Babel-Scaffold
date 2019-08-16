@@ -26,7 +26,11 @@ script:
   - yarn test
 
 deploy:
-  provider: heroku
-  api_key: $HEROKU_KEY
-  app: "ewwb"
+  provider: elasticbeanstalk
+  access_key_id: $EB_ACCESS_KEY_ID
+  secret_access_key: $EB_SECRET_KEY
+  region: "us-east-1"
+  app: "ewwb-new"
+  env: "production"
+  bucket_name: "ewwb-production"
   skip_cleanup: true
