@@ -4,7 +4,7 @@ node_modules
 .env
 workbox-config.js
 public/build
-public/server-bundle.js
+public/server-bundled.js
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
