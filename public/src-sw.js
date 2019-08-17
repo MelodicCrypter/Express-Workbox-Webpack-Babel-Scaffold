@@ -1,6 +1,6 @@
 // 1. Debug, only when development phase ===================================================
 // Comment out in production, or set to false
-workbox.setConfig({ debug: true });
+workbox.setConfig({ debug: false });
 
 // 2. Cache names ==========================================================================
 workbox.core.setCacheNameDetails({

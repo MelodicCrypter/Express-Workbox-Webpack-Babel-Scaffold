@@ -2,6 +2,7 @@ node_modules
 .idea
 .DS_Store
 .env
+workbox-config.js
 public/build
 public/server-bundle.js
 # Elastic Beanstalk Files

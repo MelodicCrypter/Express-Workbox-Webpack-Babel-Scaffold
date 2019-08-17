@@ -1,7 +1,7 @@
 {
   "name": "Express-Workbox-Webpack-Babel-Scaffolding",
   "version": "1.0.0",
-  "main": "/public/server.js",
+  "main": "/public/server-bundled.js",
   "author": "Hugh Caluscusin",
   "license": "MIT",
   "scripts": {
