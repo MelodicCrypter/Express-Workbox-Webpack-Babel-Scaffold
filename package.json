@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "clean-dir": "shopt -s extglob && find ./public/build -mindepth 1 -maxdepth 1 -not -name 'views' -exec rm -fr {} \\+ && shopt -u extglob;",
-    "prepare": "mkdir ./public/build && yarn dev-start-ar",
+    "prepare": "rm -rf .git && mkdir ./public/build && yarn dev-start-ar",
     "wp-build-dev": "webpack --config ./webpack.config.js --mode development",
     "wp-build-dev-watch": "webpack --config ./webpack.config.js --mode development --watch true",
     "dev-start-br": "browser-refresh ./public/server-bundled.js",
