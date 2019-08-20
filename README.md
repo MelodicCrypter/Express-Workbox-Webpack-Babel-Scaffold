@@ -16,6 +16,7 @@ Let's you create a modern PWA (Progressive Web App) on the fly. You can setup a 
 
 ###### If all set, you can directly use these
 0. **yarn dev-start-ar** (*with auto-reload*) or **dev-start** (*no auto-reload*)
+
 <br>
 
 #### Just Ignore These Files:
@@ -23,6 +24,8 @@ Let's you create a modern PWA (Progressive Web App) on the fly. You can setup a 
 1. .ebextensions
 2. .ebignore
 3. _elasticbeanstalk._travis.yml
+
+<br>
 
 #### Workbox (PWA)
 You can modify all your Service Worker stuffs inside */public/src-sw.js* file. You can put all your routes, caches, etc. Don't edit */public/sw.js* directly. **Webpack** will
