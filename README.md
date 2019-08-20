@@ -8,11 +8,13 @@ Let's you create a modern PWA (Progressive Web App) on the fly. You can setup a 
 <br>
 
 #### Usage
-1. yarn install
-2. yarn dev-start-ar ( *local build with watch, test, then launch with auto-reload in one*  )
-<br><br> OR
-<br><br>
-3. yarn dev-start ( *local build with no watch, test, then launch with no auto-reload* )
+1. **yarn install**
+###### If newly cloned
+2. Edit **/public/server.js**, put your **LOCAL_IP**, if you want to test your app in your devices locally
+3. **yarn prepare** ( *create build directory, then local build with watch, test, then launch with auto-reload in one*  )
+    
+###### If not, run directly
+0. **yarn dev-start-ar** (*with auto-reload*) or **dev-start** (*no auto-reload*)
 <br>
 
 #### Just Ignore These Files:
