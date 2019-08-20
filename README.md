@@ -9,11 +9,12 @@ Let's you create a modern PWA (Progressive Web App) on the fly. You can setup a 
 
 #### Usage
 1. **yarn install**
-###### If newly cloned
 2. Edit **/public/server.js**, put your **LOCAL_IP**, if you want to test your app in your devices locally
 3. **yarn prepare** ( *remove .git, create build dir, then dev build with watch, test, then launch with auto-reload in one - run this once only*  )
-    
-###### If not, run directly
+
+<br>
+
+###### If all set, you can directly use these
 0. **yarn dev-start-ar** (*with auto-reload*) or **dev-start** (*no auto-reload*)
 <br>
 
