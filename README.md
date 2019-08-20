@@ -10,7 +10,7 @@ Let's you create a modern PWA (Progressive Web App) on the fly. You can setup a 
 #### Usage
 1. **yarn install**
 2. Edit **/public/server.js**, put your **LOCAL_IP**, if you want to test your app in your devices locally
-3. **yarn prepare** ( *remove .git, create build dir, then dev build with watch, test, then launch with auto-reload in one - run this once only*  )
+3. **yarn prep** ( *remove .git, create build dir, then dev build with watch, test, then launch with auto-reload in one - run this once only*  )
 
 <br>
 
