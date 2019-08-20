@@ -2,14 +2,13 @@ const webpack = require('webpack');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const AutoCleanBuildPlugin = require('webpack-auto-clean-build-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { InjectManifest } = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 
-const devMode = process.env.NODE_ENV !== 'production';
+const DEVMODE = process.env.NODE_ENV !== 'production';
 
 // Frontend config ==================================================
 const frontConfig = {
@@ -25,7 +24,7 @@ const frontConfig = {
     watchOptions: {
         ignored: /node_modules/,
     },
-    devtool: 'inline-source-map',
+    devtool: DEVMODE ? '#eval-source-map' : 'source-map',
     module: {
         rules: [
             {
@@ -38,7 +37,7 @@ const frontConfig = {
             {
                 test: [/.css$|.scss$/],
                 use: [
-                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    DEVMODE ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     {
                         loader: 'postcss-loader',
@@ -55,7 +54,7 @@ const frontConfig = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: devMode,
+                            sourceMap: DEVMODE,
                         },
                     },
                 ],

@@ -1,11 +1,11 @@
 importScripts(
-    '/build/wbassets/precache-manifest.4545a0c1c50ca60d0774c2f60748b55f.js',
+    '/build/wbassets/precache-manifest.0042318250dc35e87faeab30e523178d.js',
     'https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js',
 );
 
 // 1. Debug, only when development phase ===================================================
 // Comment out in production, or set to false
-workbox.setConfig({ debug: true });
+workbox.setConfig({ debug: false });
 
 // 2. Cache names ==========================================================================
 workbox.core.setCacheNameDetails({
