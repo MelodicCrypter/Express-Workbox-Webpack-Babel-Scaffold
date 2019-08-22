@@ -19,7 +19,7 @@ install:
 cache:
   yarn: true
   directories:
-  - "node_modules"
+    - "node_modules"
 
 script:
   - yarn build:production
