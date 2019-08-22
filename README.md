@@ -25,7 +25,7 @@ After that, put your token inside *webpack.config.js* (line 99) file.
 <br>
 
 #### Ports
-You can the ports for Express app inside */public/server.js*. You can change your port for Ngrok inside *.ngrok.js*. You can change Light-Server's port inside *.lightrc*.
+You can change the port for Express inside *public/server.js*. You can change your port for Ngrok inside *.ngrok.js*. You can change Light-Server's port inside *.lightrc*.
 
 *NOTE: For Ngrok to work, ports for Express and Ngrok must match.*
 
@@ -33,9 +33,9 @@ You can the ports for Express app inside */public/server.js*. You can change you
 <br>
 
 #### Workbox (PWA)
-You can modify all your Service Worker stuffs inside */public/src-sw.js* file. You can put all your routes, caches, etc. Don't edit */public/sw.js* directly. **Webpack** will
+You can modify all your Service Worker stuffs inside *public/src-sw.js* file. You can put all your routes, caches, etc. Don't edit *public/sw.js* directly. **Webpack** will
 automatically generate that file for you. You can modify or rename /public/views/fallback.html file but please don't delete it. If you rename it, please also update the 
-*/public/src-sw.js* file, in the number 9 section saying '*Provided offline or fallback support*'. Don't forget to update the manifest file inside */public* to match the name
+*public/src-sw.js* file, in the number 9 section saying '*Provided offline or fallback support*'. Don't forget to update the manifest file inside *public/* to match the name
 of your app, icons, settings, etc. Also, you can turn on Debug if you are still in development phase, still inside *src-sw.js* file.
 
 <br>
