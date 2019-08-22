@@ -1,0 +1,11 @@
+{
+  "port": 3009,
+  "serve": "public",
+  "bind": "localhost",
+  "quiet": true,
+  "delay": 180,
+  "watchexps": [
+    "public/**/*"
+  ],
+  "proxy": "http://localhost:3000"
+}

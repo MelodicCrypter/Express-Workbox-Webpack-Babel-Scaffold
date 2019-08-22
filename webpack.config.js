@@ -8,23 +8,24 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 
-const DEVMODE = process.env.NODE_ENV !== 'production';
+const DEV_MODE = process.env.NODE_ENV !== 'production';
 
 // Frontend config ==================================================
 const frontConfig = {
     target: 'web',
+    stats: 'errors-only',
     entry: {
         app: [path.resolve(__dirname, './public/js/main.js')],
     },
     output: {
         path: path.resolve(__dirname, './public/build/'),
-        filename: '[name].[contenthash].js',
+        filename: '[name].[hash].js',
         publicPath: '/build/',
     },
     watchOptions: {
         ignored: /node_modules/,
     },
-    devtool: DEVMODE ? '#eval-source-map' : 'source-map',
+    devtool: DEV_MODE ? '#eval-source-map' : 'source-map',
     module: {
         rules: [
             {
@@ -37,24 +38,18 @@ const frontConfig = {
             {
                 test: [/.css$|.scss$/],
                 use: [
-                    DEVMODE ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    DEV_MODE ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     {
                         loader: 'postcss-loader',
                         options: {
                             ident: 'postcss',
-                            plugins: [
-                                // eslint-disable-next-line global-require
-                                require('autoprefixer')({
-                                    browsers: ['> 1%', 'last 2 versions'],
-                                }),
-                            ],
                         },
                     },
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: DEVMODE,
+                            sourceMap: DEV_MODE,
                         },
                     },
                 ],
@@ -116,6 +111,7 @@ const frontConfig = {
 // Backend config =======================================================
 const backConfig = {
     target: 'node',
+    stats: 'errors-only',
     entry: {
         app: [path.resolve(__dirname, './public/server.js')],
     },

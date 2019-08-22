@@ -1,5 +1,5 @@
 importScripts(
-    '/build/wbassets/precache-manifest.0042318250dc35e87faeab30e523178d.js',
+    '/build/wbassets/precache-manifest.891d5140fdf50a49177e2b3403ac9981.js',
     'https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js',
 );
 
