@@ -10,7 +10,7 @@ const LS_PORT = 3009; // this is the light-server's port, for Dev only
         .connect({
             addr: PORT,
             region: 'ap',
-            authtoken: '1PgRgkwEpS5maDcklDdSR9VjO8N_226V9caJKGvv3bjPTchGo',
+            authtoken: process.env.NGROK_TOKEN,
         })
         .then(url => {
             console.log('******************************************************');

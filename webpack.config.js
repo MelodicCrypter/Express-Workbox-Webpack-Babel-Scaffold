@@ -96,6 +96,7 @@ const frontConfig = {
         }),
         new webpack.DefinePlugin({
             'process.env.AUTHOR': JSON.stringify('hughcaluscusin'),
+            'process.env.NGROK_TOKEN': JSON.stringify('your_ngrok_token_here'),
         }),
         new InjectManifest({
             swSrc: path.resolve(__dirname, './public/src-sw.js'),
