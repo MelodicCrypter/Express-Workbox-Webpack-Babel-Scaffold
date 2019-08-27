@@ -16,7 +16,7 @@ After that, put your token inside *webpack.config.js* (line 99) file.
 <br>
 
 ###### If already ran -yarn prep- before, you can directly use these
-0. **yarn dev:start-ar** (*with auto-reload*) or **dev:start** (*no auto-reload*)
+👨‍💻 **yarn start:dev-ar** (*with auto-reload*) or **start:dev** (*no auto-reload*)
 
 <br>
 
