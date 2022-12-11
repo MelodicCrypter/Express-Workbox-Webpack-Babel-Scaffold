@@ -30,7 +30,7 @@
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "@iconify/iconify": "^1.0.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-es6-template-engine": "^2.1.9",
     "jquery": "^3.4.1",
     "materialize-css": "^1.0.0-rc.2",
